@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Control System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>🏠 Home Control System</h1>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                <span id="statusText">Disconnected</span>
+            </div>
+        </header>
+
+        <div class="device-card">
+
+            <div class="device-icon">💡</div>
+
+            <h2>Light</h2>
+
+            <div class="button-group">
+                <button class="on-btn" onclick="lightOn()">ON</button>
+                <button class="off-btn" onclick="lightOff()">OFF</button>
+            </div>
+
+        </div>
+
+        <div class="device-card">
+
+            <div class="device-icon">🌀</div>
+
+            <h2>Fan</h2>
+
+            <div class="button-group">
+                <button class="on-btn" onclick="fanOn()">ON</button>
+                <button class="off-btn" onclick="fanOff()">OFF</button>
+            </div>
+
+        </div>
+
+        <div class="voice-section">
+            <button class="voice-btn" onclick="startVoice()">
+                🎤 Voice Control
+            </button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
