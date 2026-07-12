@@ -2,143 +2,70 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #0f172a, #1e293b, #111827);
-    min-height: 100vh;
+    background: #0f172a;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    height: 100vh;
 }
 
 .container {
-    width: 90%;
-    max-width: 420px;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(15px);
-    border-radius: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, .4);
+    width: 350px;
+    background: #1e293b;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .4);
 }
 
-header {
-    text-align: center;
+h1 {
+    color: #ffffff;
     margin-bottom: 25px;
 }
 
-header h1 {
-    font-size: 30px;
+.card {
+    background: #334155;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    color: white;
     margin-bottom: 15px;
 }
 
-.status {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
-
-.status-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: red;
-}
-
-.device-card {
-    background: rgba(255, 255, 255, .08);
-    border-radius: 20px;
-    padding: 20px;
-    margin-top: 20px;
-    text-align: center;
-    transition: .3s;
-}
-
-.device-card:hover {
-    transform: translateY(-5px);
-}
-
-.device-icon {
-    font-size: 55px;
-}
-
-.device-card h2 {
-    margin: 15px 0;
-}
-
-.button-group {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
 button {
+    width: 120px;
+    height: 45px;
     border: none;
+    border-radius: 10px;
+    font-size: 16px;
     cursor: pointer;
+    margin: 5px;
     transition: .3s;
 }
 
-.on-btn {
+#lightOn,
+#fanOn {
     background: #22c55e;
     color: white;
-    padding: 12px 28px;
-    border-radius: 12px;
-    font-size: 16px;
 }
 
-.off-btn {
+#lightOff,
+#fanOff {
     background: #ef4444;
     color: white;
-    padding: 12px 28px;
-    border-radius: 12px;
-    font-size: 16px;
 }
 
-.on-btn:hover {
+button:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 15px #22c55e;
 }
 
-.off-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #ef4444;
-}
-
-.voice-section {
-    margin-top: 30px;
-    text-align: center;
-}
-
-.voice-btn {
-    width: 100%;
-    padding: 15px;
-    font-size: 18px;
-    border-radius: 15px;
-    background: #3b82f6;
-    color: white;
-}
-
-.voice-btn:hover {
-    background: #2563eb;
-    box-shadow: 0 0 20px #3b82f6;
-}
-
-@media(max-width:500px) {
-
-    .container {
-        width: 95%;
-    }
-
-    header h1 {
-        font-size: 24px;
-    }
-
-    button {
-        font-size: 14px;
-    }
-
+button:active {
+    transform: scale(.95);
 }

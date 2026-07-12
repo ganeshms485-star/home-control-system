@@ -1,30 +1,42 @@
-// ===============================
-// Home Control System
-// Test Version
-// ===============================
+import { database } from "./firebase-config.js";
+import { ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
-function lightOn() {
-    alert("Light ON");
-}
+// Database references
+const lightRef = ref(database, "controls/light");
+const fanRef = ref(database, "controls/fan");
 
-function lightOff() {
-    alert("Light OFF");
-}
+// DOM Elements
+const lightOnBtn = document.getElementById("lightOn");
+const lightOffBtn = document.getElementById("lightOff");
+const fanOnBtn = document.getElementById("fanOn");
+const fanOffBtn = document.getElementById("fanOff");
 
-function fanOn() {
-    alert("Fan ON");
-}
+// Click Events to write to Firebase
+lightOnBtn.addEventListener("click", () => set(lightRef, 1));
+lightOffBtn.addEventListener("click", () => set(lightRef, 0));
 
-function fanOff() {
-    alert("Fan OFF");
-}
+fanOnBtn.addEventListener("click", () => set(fanRef, 1));
+fanOffBtn.addEventListener("click", () => set(fanRef, 0));
 
-function startVoice() {
-    alert("Voice Control will be added in the next step.");
-}
+// Realtime Update UI based on Firebase Data
+onValue(lightRef, (snapshot) => {
+    const status = snapshot.val();
+    if (status === 1) {
+        lightOnBtn.style.opacity = "1";
+        lightOffBtn.style.opacity = "0.5";
+    } else {
+        lightOnBtn.style.opacity = "0.5";
+        lightOffBtn.style.opacity = "1";
+    }
+});
 
-// Temporary Connection Status
-window.onload = function () {
-    document.getElementById("statusText").innerText = "Ready";
-    document.querySelector(".status-dot").style.background = "#22c55e";
-};
+onValue(fanRef, (snapshot) => {
+    const status = snapshot.val();
+    if (status === 1) {
+        fanOnBtn.style.opacity = "1";
+        fanOffBtn.style.opacity = "0.5";
+    } else {
+        fanOnBtn.style.opacity = "0.5";
+        fanOffBtn.style.opacity = "1";
+    }
+});

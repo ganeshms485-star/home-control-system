@@ -4,62 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Control System</title>
+    <title>Smart Home Control</title>
 
     <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
 </head>
 
 <body>
 
     <div class="container">
 
-        <header>
-            <h1>🏠 Home Control System</h1>
+        <h1>🏠 Smart Home</h1>
 
-            <div class="status">
-                <span class="status-dot"></span>
-                <span id="statusText">Disconnected</span>
-            </div>
-        </header>
-
-        <div class="device-card">
-
-            <div class="device-icon">💡</div>
+        <div class="card">
 
             <h2>Light</h2>
 
-            <div class="button-group">
-                <button class="on-btn" onclick="lightOn()">ON</button>
-                <button class="off-btn" onclick="lightOff()">OFF</button>
-            </div>
+            <button id="lightOn">ON</button>
+            <button id="lightOff">OFF</button>
 
         </div>
 
-        <div class="device-card">
-
-            <div class="device-icon">🌀</div>
+        <div class="card">
 
             <h2>Fan</h2>
 
-            <div class="button-group">
-                <button class="on-btn" onclick="fanOn()">ON</button>
-                <button class="off-btn" onclick="fanOff()">OFF</button>
-            </div>
+            <button id="fanOn">ON</button>
+            <button id="fanOff">OFF</button>
 
-        </div>
-
-        <div class="voice-section">
-            <button class="voice-btn" onclick="startVoice()">
-                🎤 Voice Control
-            </button>
         </div>
 
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 
 </body>
 
